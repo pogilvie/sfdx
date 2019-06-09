@@ -10,4 +10,4 @@ link:
 #
 
 hello:
-	sfdx big:hello -u $(user)
+	bin/run big:hello -u $(user)
