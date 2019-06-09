@@ -1,0 +1,6 @@
+{
+    "command-description" : "send a hello event message",
+    "command-example" : "$sfdx big:hello -u my-org",
+    "name-flag" : "unused ",
+    "f-flag" : "unsed"
+}
