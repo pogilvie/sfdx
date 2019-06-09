@@ -3,14 +3,14 @@
 
 pogilvie sfdx plugins
 
-[![Version](https://img.shields.io/npm/v/@pogilvie/sfdx.svg)](https://npmjs.org/package/@pogilvie/sfdx)
+<!-- [![Version](https://img.shields.io/npm/v/@pogilvie/sfdx.svg)](https://npmjs.org/package/@pogilvie/sfdx)
 [![CircleCI](https://circleci.com/gh/pogilvie/sfdx/tree/master.svg?style=shield)](https://circleci.com/gh/pogilvie/sfdx/tree/master)
 [![Appveyor CI](https://ci.appveyor.com/api/projects/status/github/pogilvie/sfdx?branch=master&svg=true)](https://ci.appveyor.com/project/heroku/sfdx/branch/master)
 [![Codecov](https://codecov.io/gh/pogilvie/sfdx/branch/master/graph/badge.svg)](https://codecov.io/gh/pogilvie/sfdx)
 [![Greenkeeper](https://badges.greenkeeper.io/pogilvie/sfdx.svg)](https://greenkeeper.io/)
 [![Known Vulnerabilities](https://snyk.io/test/github/pogilvie/sfdx/badge.svg)](https://snyk.io/test/github/pogilvie/sfdx)
 [![Downloads/week](https://img.shields.io/npm/dw/@pogilvie/sfdx.svg)](https://npmjs.org/package/@pogilvie/sfdx)
-[![License](https://img.shields.io/npm/l/@pogilvie/sfdx.svg)](https://github.com/pogilvie/sfdx/blob/master/package.json)
+[![License](https://img.shields.io/npm/l/@pogilvie/sfdx.svg)](https://github.com/pogilvie/sfdx/blob/master/package.json) -->
 
 <!-- toc -->
 * [Debugging your plugin](#debugging-your-plugin)
