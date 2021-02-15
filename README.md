@@ -22,7 +22,7 @@ $ npm install -g @pogilvie/sfdx
 $ sfdx COMMAND
 running command...
 $ sfdx (-v|--version|version)
-@pogilvie/sfdx/0.0.1 darwin-x64 node-v10.13.0
+@pogilvie/sfdx/0.0.1 darwin-x64 node-v14.15.4
 $ sfdx --help [COMMAND]
 USAGE
   $ sfdx COMMAND

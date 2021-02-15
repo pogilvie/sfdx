@@ -11,3 +11,7 @@ link:
 
 hello:
 	bin/run big:hello -u $(user)
+
+
+publish:
+	npm publish --access public 
