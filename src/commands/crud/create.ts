@@ -26,10 +26,9 @@ export default class Create extends SfdxCommand {
   public async run(): Promise<AnyJson> {
 
     console.log(this.flags)
-    console.log(json2object('/one/two/three'))
 
     const c = this.org.getConnection();
-    const o = this.file2Object(this.flags.file)
+    const o = json2object(this.flags.file)
     const result = await c.sobject(this.flags.sobject).create(o)
 
     console.log(result)
