@@ -3,10 +3,11 @@
 link:
 	sfdx plugins:link .
 
-
 run:
-	bin/run rest:org -u $(user)
+	bin/run crud:create -s Account -f /tmp/account.json -u $(user)
 
+open:
+	sfdx force:org:open -u $(user)
 
 publish:
 	npm publish --access public 
