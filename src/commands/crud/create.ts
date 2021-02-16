@@ -1,6 +1,5 @@
 import { flags, SfdxCommand } from '@salesforce/command';
 import { AnyJson } from '@salesforce/ts-types';
-import * as fs from 'fs'
 import  json2object  from '../../json2object'
 
 
@@ -35,13 +34,5 @@ export default class Create extends SfdxCommand {
 
     return <AnyJson><unknown>result
 
-  }
-
-  file2Object(filePath: string): Object {
-    console.log(filePath)
-    const data = fs.readFileSync(filePath, 'utf8')
-    const r = JSON.parse(data)
-    console.log(r)
-    return r
   }
 }
