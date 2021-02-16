@@ -22,7 +22,7 @@ $ npm install -g @pogilvie/sfdx
 $ sfdx COMMAND
 running command...
 $ sfdx (-v|--version|version)
-@pogilvie/sfdx/0.0.1 darwin-x64 node-v14.15.4
+@pogilvie/sfdx/0.0.2 darwin-x64 node-v14.15.4
 $ sfdx --help [COMMAND]
 USAGE
   $ sfdx COMMAND
@@ -61,7 +61,7 @@ EXAMPLE
   $sfdx big:hello -u my-org
 ```
 
-_See code: [src/commands/big/hello.ts](https://github.com/pogilvie/sfdx/blob/v0.0.1/src/commands/big/hello.ts)_
+_See code: [src/commands/big/hello.ts](https://github.com/pogilvie/sfdx/blob/v0.0.2/src/commands/big/hello.ts)_
 
 ## `sfdx hello:org [-n <string>] [-f] [-v <string>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 
@@ -99,7 +99,7 @@ EXAMPLES
      Hello myname! This is org: MyOrg and I will be around until Tue Mar 20 2018!
 ```
 
-_See code: [src/commands/hello/org.ts](https://github.com/pogilvie/sfdx/blob/v0.0.1/src/commands/hello/org.ts)_
+_See code: [src/commands/hello/org.ts](https://github.com/pogilvie/sfdx/blob/v0.0.2/src/commands/hello/org.ts)_
 <!-- commandsstop -->
 <!-- debugging-your-plugin -->
 # Debugging your plugin
