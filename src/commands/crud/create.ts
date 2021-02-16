@@ -1,6 +1,7 @@
 import { flags, SfdxCommand } from '@salesforce/command';
 import { AnyJson } from '@salesforce/ts-types';
 import * as fs from 'fs'
+import  json2object  from '../../json2object'
 
 
 export default class Create extends SfdxCommand {
@@ -24,7 +25,8 @@ export default class Create extends SfdxCommand {
 
   public async run(): Promise<AnyJson> {
 
-    console.log (this.flags)
+    console.log(this.flags)
+    console.log(json2object('/one/two/three'))
 
     const c = this.org.getConnection();
     const o = this.file2Object(this.flags.file)
