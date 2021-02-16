@@ -1,16 +1,11 @@
 
-user = blog
 
 link:
 	sfdx plugins:link .
 
 
-#
-# Big Object Topic
-#
-
-hello:
-	bin/run big:hello -u $(user)
+run:
+	bin/run rest:org -u $(user)
 
 
 publish:
