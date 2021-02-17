@@ -7,6 +7,20 @@ export default class Create extends SfdxCommand {
 
   protected static requiresUsername = true;
   protected static requiresProject = false;
+  public static description = 'Insert a record useing REST from a JSON file'
+  public static examples = [
+    `$ sfdx crud:create -s Account -f ./account.json -u my-org-alias
+    where account.json looks like
+    { 
+      "Name": "Doe Account",
+      "Phone": "123-555-1212",
+      "BillingStreet" : "123 Main Street",
+      "BillingCity" : "Any Town",
+      "BillingState" : "CA",  
+      "BillingCountry": "US"
+    }
+    `
+  ]
 
   protected static flagsConfig = {
     sobject: flags.string({
