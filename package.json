@@ -1,7 +1,7 @@
 {
   "name": "@pogilvie/sfdx",
   "description": "pogilvie sfdx plugins",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": "Peter Ogilvie",
   "bugs": "https://github.com/pogilvie/sfdx/issues",
   "dependencies": {

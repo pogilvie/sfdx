@@ -3,15 +3,6 @@
 
 pogilvie sfdx plugins
 
-<!-- [![Version](https://img.shields.io/npm/v/@pogilvie/sfdx.svg)](https://npmjs.org/package/@pogilvie/sfdx)
-[![CircleCI](https://circleci.com/gh/pogilvie/sfdx/tree/master.svg?style=shield)](https://circleci.com/gh/pogilvie/sfdx/tree/master)
-[![Appveyor CI](https://ci.appveyor.com/api/projects/status/github/pogilvie/sfdx?branch=master&svg=true)](https://ci.appveyor.com/project/heroku/sfdx/branch/master)
-[![Codecov](https://codecov.io/gh/pogilvie/sfdx/branch/master/graph/badge.svg)](https://codecov.io/gh/pogilvie/sfdx)
-[![Greenkeeper](https://badges.greenkeeper.io/pogilvie/sfdx.svg)](https://greenkeeper.io/)
-[![Known Vulnerabilities](https://snyk.io/test/github/pogilvie/sfdx/badge.svg)](https://snyk.io/test/github/pogilvie/sfdx)
-[![Downloads/week](https://img.shields.io/npm/dw/@pogilvie/sfdx.svg)](https://npmjs.org/package/@pogilvie/sfdx)
-[![License](https://img.shields.io/npm/l/@pogilvie/sfdx.svg)](https://github.com/pogilvie/sfdx/blob/master/package.json) -->
-
 <!-- toc -->
 * [Debugging your plugin](#debugging-your-plugin)
 <!-- tocstop -->
@@ -22,7 +13,7 @@ $ npm install -g @pogilvie/sfdx
 $ sfdx COMMAND
 running command...
 $ sfdx (-v|--version|version)
-@pogilvie/sfdx/0.0.2 darwin-x64 node-v14.15.4
+@pogilvie/sfdx/0.0.3 darwin-x64 node-v14.15.4
 $ sfdx --help [COMMAND]
 USAGE
   $ sfdx COMMAND
@@ -30,21 +21,21 @@ USAGE
 ```
 <!-- usagestop -->
 <!-- commands -->
-* [`sfdx big:hello [-n <string>] [-f] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](#sfdx-bighello--n-string--f--u-string---apiversion-string---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
-* [`sfdx hello:org [-n <string>] [-f] [-v <string>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](#sfdx-helloorg--n-string--f--v-string--u-string---apiversion-string---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
+* [`sfdx crud:create -s <string> -f <filepath> [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](#sfdx-crudcreate--s-string--f-filepath--u-string---apiversion-string---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
+* [`sfdx crud:org [-n <string>] [-f] [-v <string>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](#sfdx-crudorg--n-string--f--v-string--u-string---apiversion-string---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
 
-## `sfdx big:hello [-n <string>] [-f] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
-
-send a hello event message
+## `sfdx crud:create -s <string> -f <filepath> [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 
 ```
 USAGE
-  $ sfdx big:hello [-n <string>] [-f] [-u <string>] [--apiversion <string>] [--json] [--loglevel 
+  $ sfdx crud:create -s <string> -f <filepath> [-u <string>] [--apiversion <string>] [--json] [--loglevel 
   trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
 
 OPTIONS
-  -f, --force                                                                       unsed
-  -n, --name=name                                                                   unused
+  -f, --file=file                                                                   (required) json file
+
+  -s, --sobject=sobject                                                             (required) sobject type Account,
+                                                                                    CustomObject__c, ...
 
   -u, --targetusername=targetusername                                               username or alias for the target
                                                                                     org; overrides default target org
@@ -56,20 +47,17 @@ OPTIONS
 
   --loglevel=(trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL)  [default: warn] logging level for
                                                                                     this command invocation
-
-EXAMPLE
-  $sfdx big:hello -u my-org
 ```
 
-_See code: [src/commands/big/hello.ts](https://github.com/pogilvie/sfdx/blob/v0.0.2/src/commands/big/hello.ts)_
+_See code: [src/commands/crud/create.ts](https://github.com/pogilvie/sfdx/blob/v0.0.3/src/commands/crud/create.ts)_
 
-## `sfdx hello:org [-n <string>] [-f] [-v <string>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
+## `sfdx crud:org [-n <string>] [-f] [-v <string>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 
 print a greeting and your org IDs
 
 ```
 USAGE
-  $ sfdx hello:org [-n <string>] [-f] [-v <string>] [-u <string>] [--apiversion <string>] [--json] [--loglevel 
+  $ sfdx crud:org [-n <string>] [-f] [-v <string>] [-u <string>] [--apiversion <string>] [--json] [--loglevel 
   trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
 
 OPTIONS
@@ -99,7 +87,7 @@ EXAMPLES
      Hello myname! This is org: MyOrg and I will be around until Tue Mar 20 2018!
 ```
 
-_See code: [src/commands/hello/org.ts](https://github.com/pogilvie/sfdx/blob/v0.0.2/src/commands/hello/org.ts)_
+_See code: [src/commands/crud/org.ts](https://github.com/pogilvie/sfdx/blob/v0.0.3/src/commands/crud/org.ts)_
 <!-- commandsstop -->
 <!-- debugging-your-plugin -->
 # Debugging your plugin
