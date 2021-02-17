@@ -13,7 +13,7 @@ $ npm install -g @pogilvie/sfdx
 $ sfdx COMMAND
 running command...
 $ sfdx (-v|--version|version)
-@pogilvie/sfdx/0.0.4 darwin-x64 node-v14.15.4
+@pogilvie/sfdx/0.0.5 darwin-x64 node-v14.15.4
 $ sfdx --help [COMMAND]
 USAGE
   $ sfdx COMMAND
@@ -63,7 +63,7 @@ EXAMPLE
        }
 ```
 
-_See code: [src/commands/crud/create.ts](https://github.com/pogilvie/sfdx/blob/v0.0.4/src/commands/crud/create.ts)_
+_See code: [src/commands/crud/create.ts](https://github.com/pogilvie/sfdx/blob/v0.0.5/src/commands/crud/create.ts)_
 
 ## `sfdx crud:org [-n <string>] [-f] [-v <string>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 
@@ -101,5 +101,5 @@ EXAMPLES
      Hello myname! This is org: MyOrg and I will be around until Tue Mar 20 2018!
 ```
 
-_See code: [src/commands/crud/org.ts](https://github.com/pogilvie/sfdx/blob/v0.0.4/src/commands/crud/org.ts)_
+_See code: [src/commands/crud/org.ts](https://github.com/pogilvie/sfdx/blob/v0.0.5/src/commands/crud/org.ts)_
 <!-- commandsstop -->
