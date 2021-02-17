@@ -1,0 +1,4 @@
+{
+    "command-description" : "create a record",
+    "command-example" : "> sfdx crud:create -s Account -f ./account.json -u my-org-alias"
+}
