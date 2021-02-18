@@ -1,7 +1,7 @@
 {
   "name": "@pogilvie/sfdx",
   "description": "pogilvie sfdx plugins",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "author": "Peter Ogilvie",
   "bugs": "https://github.com/pogilvie/sfdx/issues",
   "dependencies": {
@@ -10,6 +10,8 @@
     "@oclif/errors": "^1",
     "@salesforce/command": "^2",
     "@salesforce/core": "^2",
+    "@types/columnify": "^1.5.0",
+    "columnify": "^1.5.4",
     "tslib": "^1"
   },
   "devDependencies": {

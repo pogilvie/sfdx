@@ -3,6 +3,10 @@
 
 pogilvie sfdx plugins
 
+## Version 0.0.6 query
+- read soql query from a file 
+- print a table
+
 <!-- toc -->
 
 <!-- tocstop -->
@@ -13,7 +17,7 @@ $ npm install -g @pogilvie/sfdx
 $ sfdx COMMAND
 running command...
 $ sfdx (-v|--version|version)
-@pogilvie/sfdx/0.0.5 darwin-x64 node-v14.15.4
+@pogilvie/sfdx/0.0.6 darwin-x64 node-v14.15.4
 $ sfdx --help [COMMAND]
 USAGE
   $ sfdx COMMAND
@@ -23,6 +27,7 @@ USAGE
 <!-- commands -->
 * [`sfdx crud:create -s <string> -f <filepath> [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](#sfdx-crudcreate--s-string--f-filepath--u-string---apiversion-string---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
 * [`sfdx crud:org [-n <string>] [-f] [-v <string>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](#sfdx-crudorg--n-string--f--v-string--u-string---apiversion-string---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
+* [`sfdx query:soql -f <filepath> [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](#sfdx-querysoql--f-filepath--u-string---apiversion-string---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
 
 ## `sfdx crud:create -s <string> -f <filepath> [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 
@@ -63,7 +68,7 @@ EXAMPLE
        }
 ```
 
-_See code: [src/commands/crud/create.ts](https://github.com/pogilvie/sfdx/blob/v0.0.5/src/commands/crud/create.ts)_
+_See code: [src/commands/crud/create.ts](https://github.com/pogilvie/sfdx/blob/v0.0.6/src/commands/crud/create.ts)_
 
 ## `sfdx crud:org [-n <string>] [-f] [-v <string>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 
@@ -101,5 +106,34 @@ EXAMPLES
      Hello myname! This is org: MyOrg and I will be around until Tue Mar 20 2018!
 ```
 
-_See code: [src/commands/crud/org.ts](https://github.com/pogilvie/sfdx/blob/v0.0.5/src/commands/crud/org.ts)_
+_See code: [src/commands/crud/org.ts](https://github.com/pogilvie/sfdx/blob/v0.0.6/src/commands/crud/org.ts)_
+
+## `sfdx query:soql -f <filepath> [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
+
+Issue soql query from a file
+
+```
+USAGE
+  $ sfdx query:soql -f <filepath> [-u <string>] [--apiversion <string>] [--json] [--loglevel 
+  trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+
+OPTIONS
+  -f, --file=file                                                                   (required) soql file
+
+  -u, --targetusername=targetusername                                               username or alias for the target
+                                                                                    org; overrides default target org
+
+  --apiversion=apiversion                                                           override the api version used for
+                                                                                    api requests made by this command
+
+  --json                                                                            format output as json
+
+  --loglevel=(trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL)  [default: warn] logging level for
+                                                                                    this command invocation
+
+EXAMPLE
+  $ sfdx query:soql  -f ./accounts.soql -u my-org-alias
+```
+
+_See code: [src/commands/query/soql.ts](https://github.com/pogilvie/sfdx/blob/v0.0.6/src/commands/query/soql.ts)_
 <!-- commandsstop -->
