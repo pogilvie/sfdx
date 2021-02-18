@@ -3,7 +3,10 @@
 link:
 	sfdx plugins:link .
 
-run:
+run-query:
+	bin/run query:soql -f /tmp/accounts.soql -u $(user)
+
+run-create:
 	bin/run crud:create -s Account -f /tmp/account.json -u $(user)
 
 test-create:
