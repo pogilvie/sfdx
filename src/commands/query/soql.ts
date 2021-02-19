@@ -38,6 +38,8 @@ export default class Soql extends SfdxCommand {
     const c = this.org.getConnection();
     const result = await c.query(this.file2query(this.flags.file))
 
+    console.log(JSON.stringify(result, null, 4))
+
     const rows = []
 
     result.records.forEach(record => {
