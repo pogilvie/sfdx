@@ -1,5 +1,6 @@
 import { flags, SfdxCommand } from '@salesforce/command';
 import { AnyJson } from '@salesforce/ts-types';
+const columnify = require('columnify');
 
 export default class Relationships extends SfdxCommand {
 
@@ -26,8 +27,24 @@ export default class Relationships extends SfdxCommand {
 
     const c = this.org.getConnection();
     const result = await c.describe(this.flags.sobject)
+    
+    const rows = []
 
-    console.log(result)
+    result.childRelationships.forEach(record => {
+      let r = <any>record
+      let row = { 
+        RelationshipName: r.relationshipName,
+        ChildSobject: r.childSObject, 
+        Field: r.field,
+        CascaseDelete: r.cascadeDelete,
+        RestrictedDelete: r.restrictedDelete
+      }
+      rows.push(row)
+    })
+
+    console.log(columnify(rows))
+
+    // console.log(result)
 
     return <AnyJson><unknown>result
 
