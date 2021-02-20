@@ -16,6 +16,10 @@ run-create:
 test-create:
 	sfdx crud:create -s Account -f /tmp/account.json -u $(user)
 
+
+test-relationships:
+	sfdx describe:relationships -s Account -u $(user)
+
 open:
 	sfdx force:org:open -u $(user)
 
