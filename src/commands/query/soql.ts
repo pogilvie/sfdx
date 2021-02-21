@@ -38,13 +38,13 @@ export default class Soql extends SfdxCommand {
     const c = this.org.getConnection();
     const result = await c.query(this.file2query(this.flags.file))
 
-    console.log(JSON.stringify(result, null, 4))
+    // console.log(JSON.stringify(result, null, 4))
 
     const rows = []
 
     result.records.forEach(record => {
       let r = <any>record
-      let row = { Id: r.Id, Name: r.Name }
+      let row = this.fillRow(r)
       rows.push(row)
     })
 
@@ -52,6 +52,17 @@ export default class Soql extends SfdxCommand {
 
     return <AnyJson><unknown>result
 
+  }
+
+  fillRow(record: any) : any {
+    const row = {}
+
+    for (let property in record) {
+      if (property != 'attributes') {
+        row[property] = record[property]
+      }
+    }
+    return row
   }
 
   file2query(filePath: string) : string {
