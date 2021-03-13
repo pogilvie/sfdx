@@ -15,6 +15,9 @@ run-create:
 test-create:
 	sfdx crud:create -s Account -f /tmp/account.json -u $(user)
 
+run-update:
+	bin/run crud:update -s Account -f ./scripts/update-account.json -u $(user)
+
 run-relationships:
 	bin/run describe:relationships -s Account -u $(user)
 
