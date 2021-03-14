@@ -31,7 +31,7 @@ export default class Subscribe extends SfdxCommand {
 
     cometd.handshake( handshake => {
       if (handshake.successful) {
-        console.log('ComedD handshared successful')
+        console.log('ComedD handshake successful')
         cometd.subscribe('/data/ChangeEvents', msg => {
           console.log(JSON.stringify(msg, null, 4))
         })
