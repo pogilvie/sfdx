@@ -1,0 +1,41 @@
+{
+    "totalSize": 1,
+    "done": true,
+    "records": [
+        {
+            "attributes": {
+                "type": "Contact",
+                "url": "/services/data/v51.0/sobjects/Contact/0036100000UZArUAAX"
+            },
+            "Id": "0036100000UZArUAAX",
+            "Name": "Stephen Prestwood",
+            "Account": {
+                "attributes": {
+                    "type": "Account",
+                    "url": "/services/data/v51.0/sobjects/Account/0016100000UMEQWAA5"
+                },
+                "Name": "Stephen Prestwood Consulting",
+                "Owner": {
+                    "attributes": {
+                        "type": "User",
+                        "url": "/services/data/v51.0/sobjects/User/00561000000eLahAAE"
+                    },
+                    "Name": "Peter Ogilvie"
+                }
+            },
+            "Opportunities": {
+                "totalSize": 1,
+                "done": true,
+                "records": [
+                    {
+                        "attributes": {
+                            "type": "Opportunity",
+                            "url": "/services/data/v51.0/sobjects/Opportunity/00661000008z9byAAA"
+                        },
+                        "Id": "00661000008z9byAAA"
+                    }
+                ]
+            }
+        }
+    ]
+}

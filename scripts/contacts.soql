@@ -1,2 +1,2 @@
-SELECT Id, Name, Account.Name
+SELECT Id, Name, Account.Name, Account.Owner.Name, (SELECT Id, Name FROM Opportunities)
 FROM Contact

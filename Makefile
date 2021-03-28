@@ -7,7 +7,7 @@ run-query:
 	bin/run query:soql -f ./scripts/accounts.soql -u $(user)
 
 run-query-contacts:
-	bin/run query:soql -f ./scripts/contacts.soql -u $(user)
+	bin/run query:soql -f ./scripts/contacts.soql -u $(user) 
 
 run-create:
 	bin/run crud:create -s Account -f ./scripts/account.json -u $(user)
