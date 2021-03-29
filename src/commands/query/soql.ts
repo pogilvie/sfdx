@@ -49,7 +49,7 @@ function flatten(parent, obj) {
     let path = parent ? parent + '.' + key : key
     if (typeof obj[key] === 'object' && obj[key] !== null) {
       if (Array.isArray(obj[key])) {
-        flattened[path] = JSON.stringify(obj[key])
+        flattened[path] = JSON.stringify(obj[key], null, 2).replace('[', '').replace(']','')
       } else {
         Object.assign(flattened, flatten(path, obj[key]))
       }
@@ -104,20 +104,9 @@ export default class Soql extends SfdxCommand {
       rows.push(flatten(null, r))
     })
 
-    console.log(columnify(rows))
+    console.log(columnify(rows, { preserveNewLines: true }))
 
     return <AnyJson><unknown>result
-  }
-
-  fillRow(record: any) : any {
-    const row = {}
-
-    for (let property in record) {
-      if (property != 'attributes') {
-        row[property] = record[property]
-      }
-    }
-    return row
   }
 
   file2query(filePath: string) : string {

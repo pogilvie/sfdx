@@ -1,2 +1,3 @@
-SELECT Id, Name, Account.Name, Account.Owner.Name, (SELECT Id, Name FROM Opportunities)
+SELECT Id, Name, Account.Name, Account.Owner.Name, (SELECT Id, CaseNumber FROM Cases)
 FROM Contact
+LIMIT 10
