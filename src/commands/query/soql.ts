@@ -93,10 +93,10 @@ export default class Soql extends SfdxCommand {
 
   public async run(): Promise<AnyJson> {
 
+    console.log('query version 1.0')
     const c = this.org.getConnection();
     const result = await c.query(this.file2query(this.flags.file))
 
-    // console.log(JSON.stringify(result, null, 4))
     const simpleRows = simplifyQuery(result)
     
     const rows = []
