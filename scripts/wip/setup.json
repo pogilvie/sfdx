@@ -1,0 +1,17 @@
+{ 
+  "actions" : [
+    {
+      "opcode" : "create",
+      "sobject" : "Account",
+      "name" : "DoeAccount",
+      "payload" : {
+        "Name": "Doe Account",
+        "Phone": "123-555-1212",
+        "BillingStreet" : "123 Main Street",
+        "BillingCity" : "Any Town",
+        "BillingState" : "CA",  
+        "BillingCountry": "US"
+      }
+    }
+  ]
+}

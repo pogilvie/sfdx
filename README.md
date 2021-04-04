@@ -23,6 +23,13 @@ USAGE
   $ sfdx COMMAND
 ...
 ```
+
+
+# Mongo
+- mongo
+- use test
+- show collections
+- collections are created implicity when they are first referenced.
 <!-- usagestop -->
 <!-- commands -->
 * [`sfdx crud:create -s <string> -f <filepath> [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](#sfdx-crudcreate--s-string--f-filepath--u-string---apiversion-string---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)

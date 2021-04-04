@@ -29,3 +29,13 @@ open:
 
 publish:
 	npm publish --access public 
+
+
+#
+# WIP Work in Progress: an end to end testing framework
+#
+WIP_HOME = ./scripts/wip
+RUNID = run001
+
+wip:
+	bin/run wip:run -r $(RUNID) -f $(WIP_HOME)/setup.json -u $(user)
