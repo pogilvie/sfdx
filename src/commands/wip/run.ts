@@ -5,6 +5,7 @@ const { MongoClient } = require("mongodb")
 
 enum Opcode {
   NOOP = 'noop',
+  START = 'start',
   CREATE = 'create'
 }
 
@@ -18,6 +19,7 @@ type Action = {
 function getOpcode(input: string) : Opcode {
 
   switch (input) {
+    case 'start': return Opcode.START
     case 'create': return Opcode.CREATE
     default: throw `Error: illegal opcode ${input}`
   }
@@ -141,8 +143,7 @@ export default class Run extends SfdxCommand {
     return <AnyJson><unknown>null
   }
 
-  async start() {
-    const r = []
+  async start(name: string) {
 
     // jsforce
     const sfdc = this.org.getConnection();
@@ -153,28 +154,25 @@ export default class Run extends SfdxCommand {
     const client = new MongoClient(uri, options);
     await client.connect();
     const database = client.db('test');
-    const mongo = database.collection('run');
+    const run = database.collection('run');
 
+    run.insertOne({runid: this.flags.runid})
+
+    return [sfdc, client, run]
   }
 
   async create(sobject : string, name: string, payload : any) {
-    const c = this.org.getConnection();
-    const result = await c.sobject(sobject).create(payload)
-    console.log(result)
+    const [sfdc, client, run] = await this.start(name)
 
+    const s_result = await sfdc.sobject(sobject).create(payload)
+    console.log('salesforce result:', s_result)
 
     // mongo
-    const uri = "mongodb://localhost:27017";
-    const options = { useUnifiedTopology: true }
-    const client = new MongoClient(uri, options);
-    await client.connect();
-    const database = client.db('test');
-    const example = database.collection('example');
-    const query = { x: 1 };
-    const doc = await example.findOne(query);
+    const update = {}
+    update[name] = s_result.id
+    const u_result = await run.updateOne({runid: this.flags.runid}, {$set: update})
+    console.log('u_result', u_result.result)
 
-    console.log(doc);
     await client.close();
-
   }
 }

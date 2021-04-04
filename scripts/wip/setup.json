@@ -1,6 +1,9 @@
 { 
   "actions" : [
     {
+      "opcode": "start"
+    },
+    {
       "opcode" : "create",
       "sobject" : "Account",
       "name" : "DoeAccount",

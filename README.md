@@ -30,6 +30,10 @@ USAGE
 - use test
 - show collections
 - collections are created implicity when they are first referenced.
+> db.run.find({})
+{ "_id" : ObjectId("606904e34cf4d5f6548fe1a3"), "msg" : "Hello, world!" }
+{ "_id" : ObjectId("606905076557b2f6737529de"), "msg" : "Hello, world!" }
+{ "_id" : ObjectId("6069057334bb74f6bbc51f02"), "msg" : "Hello, world!" }
 <!-- usagestop -->
 <!-- commands -->
 * [`sfdx crud:create -s <string> -f <filepath> [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](#sfdx-crudcreate--s-string--f-filepath--u-string---apiversion-string---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
