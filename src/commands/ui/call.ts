@@ -50,20 +50,20 @@ export default class Call extends SfdxCommand {
       const picklist = payload.picklistFieldValues[this.flags.picklist]
       console.log('picklist: ', picklist)
   
-      for (let picklist in payload.picklistFieldValues) {
-        console.log(picklist)
-      //   let controllerValues = payload.picklistFieldValues[picklist].controllerValues
-      //   let values = payload.picklistFieldValues[picklist].values
-      //   console.log('controller values: ', controllerValues)
-      //   values.forEach(e => {
-      //     console.log(e.label)
-      //     if (e.validFor.length) {
-      //       e.validFor.forEach( value => { 
-      //         console.log('valid for: ', getKeyByValue(controllerValues, value))
-      //       })
-      //     }
-      //   });
-      }
+      let controllerValues = picklist.controllerValues
+      let values = picklist.values
+      console.log('controller values: ', controllerValues)
+      values.forEach(e => {
+        const validFor = []
+        console.log(e.label)
+        if (e.validFor.length) {
+          e.validFor.forEach( value => { 
+            validFor.push(getKeyByValue(controllerValues, value))
+            console.log('valid for: ', getKeyByValue(controllerValues, value))
+          })
+          console.log('valid for', validFor)
+        }
+      });
     })
     return <AnyJson><unknown>null
   }
