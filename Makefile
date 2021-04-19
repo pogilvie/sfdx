@@ -39,3 +39,10 @@ RUNID = run001
 
 wip:
 	bin/run wip:run -r $(RUNID) -f $(WIP_HOME)/setup.json -u $(user)
+
+#
+# UI API 
+#
+
+ui:
+	bin/run ui:call -s Object_A__c -p Foods__c -r 012610000002pGnAAI -u $(user)
