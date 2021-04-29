@@ -21,15 +21,16 @@ export default class Run extends SfdxCommand {
   protected static flagsConfig = { 
     endpoint: flags.string( { char: 'e', description: 'API name of sobject', required: true } ),
     iterations: flags.integer( { char: 'i', description: 'iterations', default: 5 } ),
-    interval: flags.integer( {char: 't', description: 'interval time in msec', default: 1000})
+    interval: flags.integer( {char: 't', description: 'interval time in msec', default: 1000}),
+    concurrency: flags.integer( {char: 'c', description: 'number of requests per interval', default: 5})
   };
 
   public async run(): Promise<AnyJson> {
     console.log(this.flags)
 
     const queue = new PQueue({ 
-      concurrency: 5,
-      intervalCap: 5,
+      concurrency: this.flags.concurrency,
+      intervalCap: this.flags.concurrency,
       interval: this.flags.interval,
       carryoverConcurrencyCount: true 
     });
