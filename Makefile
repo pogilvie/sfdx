@@ -48,3 +48,12 @@ ui:
 
 ui-cb:
 	bin/run ui:call -s Case -p s_Sub_category__c -r 0126A000000VHhkQAG -u $(user)
+	bin/run ui:call -s Object_A__c -p Foods__c -r 012610000002pGnAAI -u $(user)
+
+#
+# GEN LOAD GENERATOR
+#
+# Requires scatch org 'sim' be brought up and populated
+#
+gen:
+	bin/run gen:run -i 5 -e /sim -u sim
